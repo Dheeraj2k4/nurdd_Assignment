@@ -17,7 +17,7 @@ export default function GradientFollowButton({
   const buttonText = isFollowing ? "Following" : title;
   const gradientColors = isFollowing 
     ? ['#4a5568', '#2d3748'] // Muted gradient when following
-    : COLORS.FOLLOW_BUTTON_GRADIENT || ['#7C3AED', '#06B6D4']; // Purple to cyan fallback
+    : COLORS.FOLLOW_BUTTON_GRADIENT; // Purple to cyan
 
   return (
     <TouchableOpacity

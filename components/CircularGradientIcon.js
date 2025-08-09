@@ -14,12 +14,12 @@ export default function CircularGradientIcon({
 }) {
   // Rotate through different gradient combinations
   const gradients = [
-    COLORS.ICON_GRADIENT_1 || ['#7C3AED', '#06B6D4', '#EC4899'], // Purple → blue → pink
-    COLORS.ICON_GRADIENT_2 || ['#06B6D4', '#EC4899', '#7C3AED'], // Blue → pink → purple
-    COLORS.ICON_GRADIENT_3 || ['#EC4899', '#7C3AED', '#06B6D4'], // Pink → purple → blue
+    COLORS.ICON_GRADIENT_1, // Purple → blue → pink
+    COLORS.ICON_GRADIENT_2, // Blue → pink → purple
+    COLORS.ICON_GRADIENT_3, // Pink → purple → blue
   ];
 
-  const selectedGradient = gradients[gradientIndex % gradients.length] || gradients[0];
+  const selectedGradient = gradients[gradientIndex % gradients.length];
 
   return (
     <View style={[styles.container, { width: size, height: size }, style]}>

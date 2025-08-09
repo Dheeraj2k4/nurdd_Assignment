@@ -26,15 +26,15 @@ import SplashScreen from './components/SplashScreen';
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [fontsLoaded] = useFonts({
-    // Nordic Club fonts
+    
     'NordicClub': require('./assets/fonts/NordicClub.otf'),
     'NordicClub-Oblique': require('./assets/fonts/NordicClub-Oblique.otf'),
-    // Poppins fonts
+    
     Poppins_400Regular,
     Poppins_500Medium,
     Poppins_600SemiBold,
     Poppins_700Bold,
-    // Syne fonts
+    
     Syne_400Regular,
     Syne_500Medium,
     Syne_600SemiBold,
@@ -46,7 +46,7 @@ export default function App() {
     setShowSplash(false);
   };
 
-  // Show splash screen if it's still showing or fonts aren't loaded
+  
   if (showSplash) {
     return <SplashScreen onAnimationFinish={handleSplashFinish} />;
   }

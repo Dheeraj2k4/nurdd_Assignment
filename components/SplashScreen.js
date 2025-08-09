@@ -21,7 +21,7 @@ const SplashScreen = ({ onAnimationFinish }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.BACKGROUND, // Use your app's background color
+    backgroundColor: COLORS.BACKGROUND, 
     justifyContent: 'center',
     alignItems: 'center',
   },

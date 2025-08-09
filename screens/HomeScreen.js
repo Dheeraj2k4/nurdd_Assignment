@@ -20,9 +20,7 @@ import LoadingPlaceholder from '../components/LoadingPlaceholder';
 import ErrorMessage from '../components/ErrorMessage';
 import NewAnimatedGradient from '../components/NewAnimatedGradient';
 
-/**
- * Home Screen - Displays list of brands with enhanced design
- */
+// home screen
 export default function HomeScreen() {
   const navigation = useNavigation();
   const [brands, setBrands] = useState([]);
@@ -30,7 +28,7 @@ export default function HomeScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch brands from API
+  //fetching api
   const fetchBrands = async (isRefresh = false) => {
     try {
       if (!isRefresh) {
@@ -38,14 +36,14 @@ export default function HomeScreen() {
       }
       setError(null);
       
-      // Try to fetch from API first, fallback to mockData
+      
       try {
         const apiData = await getBrands();
         setBrands(apiData || []);
       } catch (apiError) {
         console.log('API failed:', apiError.message);
         setError('Failed to load brands from API. Please check your connection.');
-        setBrands([]); // Set empty array if API fails
+        setBrands([]);// empty array if api fails
       }
     } catch (err) {
       console.error('Error fetching brands:', err);
@@ -56,13 +54,13 @@ export default function HomeScreen() {
     }
   };
 
-  // Handle pull to refresh
+  
   const handleRefresh = () => {
     setRefreshing(true);
     fetchBrands(true);
   };
 
-  // Handle brand card press
+  
   const handleBrandPress = (brand) => {
     navigation.navigate(ROUTES.BRAND_DETAIL, { 
       brandId: brand.id,
@@ -70,12 +68,12 @@ export default function HomeScreen() {
     });
   };
 
-  // Load brands on component mount
+  
   useEffect(() => {
     fetchBrands();
   }, []);
 
-  // Render brand item
+
   const renderBrandItem = ({ item }) => (
     <BrandCard 
       brand={item} 
@@ -83,7 +81,7 @@ export default function HomeScreen() {
     />
   );
 
-  // Render empty state
+  
   const renderEmptyState = () => (
     <View style={styles.emptyContainer}>
       <Text style={styles.emptyText}>No brands found</Text>
@@ -168,12 +166,12 @@ const styles = StyleSheet.create({
     color: COLORS.TEXT_PRIMARY,
     textAlign: 'center',
     marginBottom: SPACING.SM,
-    fontFamily: TYPOGRAPHY.FONT_FAMILY.HEADING, // Nordic Club for headings
+    fontFamily: TYPOGRAPHY.FONT_FAMILY.HEADING, 
   },
   emptySubtext: {
     fontSize: TYPOGRAPHY.FONT_SIZE.BODY,
     color: COLORS.TEXT_SECONDARY,
     textAlign: 'center',
-    fontFamily: TYPOGRAPHY.FONT_FAMILY.PRIMARY, // Poppins Semi Bold for body text
+    fontFamily: TYPOGRAPHY.FONT_FAMILY.PRIMARY, 
   },
 });

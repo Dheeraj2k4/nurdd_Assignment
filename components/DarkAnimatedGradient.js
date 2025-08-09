@@ -2,20 +2,17 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-/**
- * Blue Animated Gradient Component for Brand Detail Screen
- * Uses a sophisticated blue gradient with multiple color stops
- */
+
 export default function DarkAnimatedGradient({ children, style }) {
   return (
     <View style={[styles.container, style]}>
       <LinearGradient
         colors={[
-          '#001A4D', // Deep navy
-          '#002966', // Dark blue
-          '#003D99', // Medium blue
-          '#0052CC', // Brighter blue
-          '#001A4D', // Back to deep navy
+          '#001A4D', 
+          '#002966', 
+          '#003D99', 
+          '#0052CC',
+          '#001A4D',
         ]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -33,10 +30,10 @@ export default function DarkAnimatedGradient({ children, style }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#001A4D', // fallback background
+    backgroundColor: '#001A4D', 
   },
   content: {
     flex: 1,
-    zIndex: 1, // Ensure content appears above the gradient
+    zIndex: 1, 
   },
 });

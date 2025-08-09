@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-// MockAPI base URL - Replace with your actual MockAPI project URL
+// MockApi url
 const BASE_URL = 'https://6896f0b5250b078c204085df.mockapi.io/';
 
-// Create axios instance with default config
 const api = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,
@@ -12,7 +11,7 @@ const api = axios.create({
   },
 });
 
-// Request interceptor for logging
+
 api.interceptors.request.use(
   (config) => {
     console.log(`Making ${config.method?.toUpperCase()} request to: ${config.url}`);
@@ -24,7 +23,6 @@ api.interceptors.request.use(
   }
 );
 
-// Response interceptor for error handling
 api.interceptors.response.use(
   (response) => {
     return response;

@@ -22,13 +22,13 @@ export default function BrandCard({ brand, onPress }) {
   const [retryCount, setRetryCount] = useState(0);
   const maxRetries = 2;
 
-  // Reset error state when logoUrl changes
+  
   React.useEffect(() => {
     setLogoError(false);
     setRetryCount(0);
   }, [logoUrl]);
 
-  // Use brand id to determine gradient variation
+ 
   const gradientIndex = id ? parseInt(id) % 3 : 0;
 
   return (
@@ -41,11 +41,11 @@ export default function BrandCard({ brand, onPress }) {
       accessibilityHint="Tap to see more information about this brand"
     >
       <View style={styles.content}>
-        {/* Brand Logo or Circular Gradient Icon */}
+        
         <View style={styles.logoContainer}>
           {logoUrl && !logoError ? (
             <Image 
-              key={`${logoUrl}-${retryCount}`} // Force re-mount on retry
+              key={`${logoUrl}-${retryCount}`} 
               source={{ uri: logoUrl }}
               style={styles.logo}
               contentFit="contain"
@@ -72,7 +72,7 @@ export default function BrandCard({ brand, onPress }) {
                   console.log(`Retrying image load for ${name} (attempt ${retryCount + 1}/${maxRetries})`);
                   setRetryCount(prev => prev + 1);
                 } else {
-                  setLogoError(true); // Set error state to show fallback after max retries
+                  setLogoError(true); 
                 }
               }}
               transition={200}
@@ -86,7 +86,7 @@ export default function BrandCard({ brand, onPress }) {
           )}
         </View>
 
-        {/* Brand Info */}
+        
         <View style={styles.info}>
           <Heading 
             level={4}
@@ -106,10 +106,10 @@ export default function BrandCard({ brand, onPress }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.CARD_BACKGROUND, // rgba(0, 0, 0, 0.3)
-    borderRadius: RADIUS.XL, // 20px radius
-    borderWidth: 2, // 1-2px white border
-    borderColor: COLORS.CARD_BORDER, // White border
+    backgroundColor: COLORS.CARD_BACKGROUND, 
+    borderRadius: RADIUS.XL, 
+    borderWidth: 2, 
+    borderColor: COLORS.CARD_BORDER, 
     marginHorizontal: SPACING.LG,
     marginVertical: SPACING.SM,
     ...SHADOWS.MEDIUM,
@@ -125,18 +125,18 @@ const styles = StyleSheet.create({
     height: 56,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF', // White background container
-    borderRadius: 28, // Circular container
-    overflow: 'hidden', // Ensure content stays within bounds
+    backgroundColor: '#FFFFFF', 
+    borderRadius: 28, 
+    overflow: 'hidden', 
   },
   logo: {
-    width: 48, // Slightly smaller than container
-    height: 48, // Slightly smaller than container
-    borderRadius: 24, // Maintain circular shape
-    backgroundColor: '#FFFFFF', // White background for logos
+    width: 48, 
+    height: 48, 
+    borderRadius: 24, 
+    backgroundColor: '#FFFFFF', 
   },
   icon: {
-    marginRight: 0, // Remove margin since it's inside logoContainer
+    marginRight: 0,
   },
   info: {
     flex: 1,
@@ -144,13 +144,13 @@ const styles = StyleSheet.create({
   },
   name: {
     marginBottom: SPACING.XS,
-    // Font properties handled by Heading component
+   
   },
   description: {
-    fontSize: TYPOGRAPHY.FONT_SIZE.DESCRIPTION, // 16px for description
-    fontFamily: TYPOGRAPHY.FONT_FAMILY.PRIMARY, // Poppins Semi Bold for body text
+    fontSize: TYPOGRAPHY.FONT_SIZE.DESCRIPTION, 
+    fontFamily: TYPOGRAPHY.FONT_FAMILY.PRIMARY,
     fontWeight: TYPOGRAPHY.FONT_WEIGHT.NORMAL,
-    color: COLORS.TEXT_PRIMARY, // White font
+    color: COLORS.TEXT_PRIMARY, 
     lineHeight: TYPOGRAPHY.LINE_HEIGHT.NORMAL * TYPOGRAPHY.FONT_SIZE.DESCRIPTION,
   },
 });

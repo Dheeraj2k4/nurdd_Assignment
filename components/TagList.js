@@ -62,19 +62,19 @@ const styles = StyleSheet.create({
     fontSize: TYPOGRAPHY.FONT_SIZE.HEADING,
     fontWeight: TYPOGRAPHY.FONT_WEIGHT.BOLD,
     color: COLORS.TEXT_PRIMARY,
-    fontFamily: TYPOGRAPHY.FONT_FAMILY.HEADING, // Nordic Club for headings
+    fontFamily: TYPOGRAPHY.FONT_FAMILY.HEADING, 
     marginBottom: SPACING.MD,
   },
   tagsWrapper: {
     flexDirection: 'row',
-    flexWrap: 'wrap', // Allow tags to wrap to next line
+    flexWrap: 'wrap', 
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
   tagContainer: {
     marginRight: SPACING.SM,
     marginBottom: SPACING.SM,
-    maxWidth: width * 0.4, // Maximum 40% of screen width per tag
+    maxWidth: width * 0.4, 
   },
   tagBorder: {
     padding: 2,
@@ -83,23 +83,23 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
-    elevation: 3, // Android shadow
+    elevation: 3,
   },
   tagInner: {
-    backgroundColor: COLORS.TAG_BACKGROUND, // Use new purple color
+    backgroundColor: COLORS.TAG_BACKGROUND, 
     borderRadius: 18,
     paddingHorizontal: SPACING.MD,
     paddingVertical: SPACING.SM,
-    minWidth: 60, // Minimum width for small tags
+    minWidth: 60, 
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.3)', // Subtle white border inside
+    borderColor: 'rgba(255, 255, 255, 0.3)', 
   },
   tagText: {
     fontSize: TYPOGRAPHY.FONT_SIZE.CAPTION,
     fontWeight: TYPOGRAPHY.FONT_WEIGHT.MEDIUM,
     color: COLORS.TEXT_PRIMARY,
-    fontFamily: TYPOGRAPHY.FONT_FAMILY.PRIMARY, // Poppins Semi Bold for body text
+    fontFamily: TYPOGRAPHY.FONT_FAMILY.PRIMARY, 
     textAlign: 'center',
-    flexShrink: 1, // Allow text to shrink if needed
+    flexShrink: 1,
   },
 });

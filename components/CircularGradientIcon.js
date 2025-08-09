@@ -3,20 +3,16 @@ import { View, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, RADIUS } from '../constants/theme';
 
-/**
- * CircularGradientIcon - Bright radial gradient icon component
- * Used for brand cards with purple → blue → pink gradients
- */
 export default function CircularGradientIcon({ 
   size = 56, 
   gradientIndex = 0,
   style 
 }) {
-  // Rotate through different gradient combinations
+ 
   const gradients = [
-    COLORS.ICON_GRADIENT_1, // Purple → blue → pink
-    COLORS.ICON_GRADIENT_2, // Blue → pink → purple
-    COLORS.ICON_GRADIENT_3, // Pink → purple → blue
+    COLORS.ICON_GRADIENT_1, 
+    COLORS.ICON_GRADIENT_2, 
+    COLORS.ICON_GRADIENT_3, 
   ];
 
   const selectedGradient = gradients[gradientIndex % gradients.length];

@@ -9,7 +9,7 @@ import Heading from './Heading';
  * @param {string} subtitle - Optional subtitle text
  */
 export default function Header({ title, subtitle }) {
-  // Debug font loading
+ 
   React.useEffect(() => {
     console.log('Header rendered with title:', title, 'using font:', 'Syne_700Bold');
   }, [title]);
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    letterSpacing: TYPOGRAPHY.LETTER_SPACING.WIDE, // Slight letter spacing
+    letterSpacing: TYPOGRAPHY.LETTER_SPACING.WIDE,
     marginBottom: SPACING.SM,
   },
   subtitle: {

@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,
-    elevation: 8, // Android shadow
+    elevation: 8, 
   },
   buttonText: {
     fontSize: TYPOGRAPHY.FONT_SIZE.BODY,

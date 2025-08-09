@@ -16,8 +16,8 @@ export default function GradientFollowButton({
 }) {
   const buttonText = isFollowing ? "Following" : title;
   const gradientColors = isFollowing 
-    ? ['#4a5568', '#2d3748'] // Muted gradient when following
-    : COLORS.FOLLOW_BUTTON_GRADIENT; // Purple to cyan
+    ? ['#4a5568', '#2d3748'] 
+    : COLORS.FOLLOW_BUTTON_GRADIENT; 
 
   return (
     <TouchableOpacity
@@ -42,8 +42,8 @@ export default function GradientFollowButton({
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: RADIUS.LG, // Rounded corners
-    ...SHADOWS.BUTTON, // Small shadow
+    borderRadius: RADIUS.LG, 
+    ...SHADOWS.BUTTON, 
     overflow: 'hidden',
   },
   gradient: {
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     fontSize: TYPOGRAPHY.FONT_SIZE.BODY_LARGE,
     fontFamily: TYPOGRAPHY.FONT_FAMILY.BOLD,
     fontWeight: TYPOGRAPHY.FONT_WEIGHT.BOLD,
-    color: COLORS.WHITE, // White text
+    color: COLORS.WHITE, 
     textAlign: 'center',
     letterSpacing: TYPOGRAPHY.LETTER_SPACING.NORMAL,
   },

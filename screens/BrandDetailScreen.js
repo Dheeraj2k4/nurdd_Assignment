@@ -28,9 +28,7 @@ import GradientFollowButton from '../components/GradientFollowButton';
 
 const { width } = Dimensions.get('window');
 
-/**
- * Brand Detail Screen - Enhanced design matching the images
- */
+//brand detail screen
 export default function BrandDetailScreen() {
   const route = useRoute();
   const navigation = useNavigation();
@@ -42,13 +40,13 @@ export default function BrandDetailScreen() {
   const [isFollowing, setIsFollowing] = useState(false);
   const [logoError, setLogoError] = useState(false);
 
-  // Fetch brand details from API
+  
   const fetchBrandDetails = async () => {
     try {
       setLoading(true);
       setError(null);
       
-      // Try to fetch from API
+      
       try {
         const brandData = await getBrandById(brandId);
         setBrand(brandData || null);
@@ -65,7 +63,7 @@ export default function BrandDetailScreen() {
     }
   };
 
-  // Handle website link press
+  
   const handleWebsitePress = async (url) => {
     const formattedUrl = formatUrl(url);
     
@@ -86,19 +84,19 @@ export default function BrandDetailScreen() {
     }
   };
 
-  // Handle follow button press
+  //follow button
   const handleFollowPress = () => {
     setIsFollowing(!isFollowing);
   };
 
-  // Handle back button press
+  
   const handleBackPress = () => {
     navigation.goBack();
   };
 
-  // Load brand details on component mount
+  
   useEffect(() => {
-    setLogoError(false); // Reset logo error when brand changes
+    setLogoError(false); 
     fetchBrandDetails();
   }, [brandId]);
 
@@ -160,7 +158,7 @@ export default function BrandDetailScreen() {
       <StatusBar barStyle="light-content" backgroundColor={COLORS.SURFACE} />
       
       <DarkAnimatedGradient style={styles.gradient}>
-        {/* Header with back button */}
+        
         <View style={styles.header}>
           <TouchableOpacity 
             style={styles.backButton}
@@ -178,7 +176,7 @@ export default function BrandDetailScreen() {
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
         >
-          {/* Centered Brand Logo or Gradient Icon */}
+          
           <View style={styles.logoContainer}>
             {brand?.logoUrl && !logoError ? (
               <View style={styles.brandLogoWrapper}>
@@ -189,7 +187,7 @@ export default function BrandDetailScreen() {
                   placeholder={{ blurhash: 'L6PZfSi_.AyE_3t7t7R**0o#DgR4' }}
                   onError={() => {
                     console.log('Brand logo failed to load for:', brand.name);
-                    setLogoError(true); // Set error state to show fallback
+                    setLogoError(true); 
                   }}
                   transition={200}
                 />
@@ -202,7 +200,7 @@ export default function BrandDetailScreen() {
             )}
           </View>
 
-          {/* Large Lowercase Brand Name */}
+         
           <Heading 
             level={2}
             style={styles.brandName}
@@ -211,12 +209,12 @@ export default function BrandDetailScreen() {
             {brand?.name?.toLowerCase()}
           </Heading>
 
-          {/* Centered Paragraph Description */}
+          
           <Text style={styles.description}>
             {brand?.longDescription || brand?.shortDescription}
           </Text>
 
-          {/* Gradient Follow Button */}
+        
           <View style={styles.followButtonContainer}>
             <GradientFollowButton
               title="Follow"
@@ -226,12 +224,12 @@ export default function BrandDetailScreen() {
             />
           </View>
 
-          {/* Tags */}
+         
           {brand?.tags && brand.tags.length > 0 && (
             <TagList tags={brand.tags} />
           )}
 
-          {/* Website Link */}
+          
           {brand?.website && (
             <TouchableOpacity
               style={styles.websiteContainer}
@@ -305,7 +303,7 @@ const styles = StyleSheet.create({
     width: 140,
     height: 140,
     borderRadius: 70,
-    backgroundColor: '#FFFFFF', // White background for brand logos
+    backgroundColor: '#FFFFFF', 
     justifyContent: 'center',
     alignItems: 'center',
     padding: SPACING.MD,
@@ -319,15 +317,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: SPACING.LG,
     paddingHorizontal: SPACING.LG,
-    // Font properties handled by Heading component
+    
   },
   description: {
     fontSize: TYPOGRAPHY.FONT_SIZE.BODY_LARGE,
-    fontFamily: TYPOGRAPHY.FONT_FAMILY.PRIMARY, // Poppins Semi Bold for body text
+    fontFamily: TYPOGRAPHY.FONT_FAMILY.PRIMARY, 
     fontWeight: TYPOGRAPHY.FONT_WEIGHT.NORMAL,
-    color: COLORS.TEXT_SECONDARY, // White slightly transparent on dark background
+    color: COLORS.TEXT_SECONDARY, 
     textAlign: 'center',
-    lineHeight: TYPOGRAPHY.LINE_HEIGHT.SPACIOUS * TYPOGRAPHY.FONT_SIZE.BODY_LARGE, // Increased line height
+    lineHeight: TYPOGRAPHY.LINE_HEIGHT.SPACIOUS * TYPOGRAPHY.FONT_SIZE.BODY_LARGE, 
     marginBottom: SPACING.XL,
     paddingHorizontal: SPACING.XL,
   },
@@ -342,18 +340,18 @@ const styles = StyleSheet.create({
     width: width,
   },
   websiteContainer: {
-    backgroundColor: 'rgba(0, 0, 0, 0.3)', // Dark semi-transparent background
+    backgroundColor: 'rgba(0, 0, 0, 0.3)', 
     borderRadius: RADIUS.MD,
     marginHorizontal: SPACING.LG,
     marginTop: SPACING.LG,
     padding: SPACING.LG,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.2)', // Subtle white border
+    borderColor: 'rgba(255, 255, 255, 0.2)', 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
-    elevation: 3, // Android shadow
+    elevation: 3, 
   },
   websiteContent: {
     flexDirection: 'row',

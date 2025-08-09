@@ -1,6 +1,49 @@
-# BrandPeek - Brand Discovery App
+# BrandPeek
 
-A polished React Native mobile app built with Expo for discovering amazing brands and their stories.
+A modern React Native app for discovering and exploring top brands with beautiful UI and seamless navigation.
+
+## Description
+
+BrandPeek is a mobile application that allows users to browse and discover popular brands. It features a clean, modern interface with gradient backgrounds, custom typography, and smooth animations. Users can view brand listings on the home screen and tap to see detailed information about each brand.
+
+## Installation Instructions
+
+1. **Prerequisites**: Node.js (v16+), Expo CLI
+2. **Clone the repository**:
+   ```bash
+   git clone <your-repo-url>
+   cd brandpeek
+   ```
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+1. **Start the development server**:
+   ```bash
+   npx expo start
+   ```
+2. **Run the app**:
+   - Scan QR code with Expo Go app
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+
+## Dependencies
+
+- **React Native** with Expo SDK 53
+- **React Navigation** - Screen navigation
+- **expo-linear-gradient** - Gradient backgrounds
+- **axios** - API calls
+- **lottie-react-native** - Splash animations
+- **@expo-google-fonts/syne** - Syne fonts for headings
+- **@expo-google-fonts/poppins** - Poppins fonts for body text
+- **expo-image** - Optimized image loading
+- **expo-font** - Custom font loading (Nordic Club)
+- **@expo/vector-icons** - Icon library
+
+**Backend**: MockAPI for brand data (`https://6896f0b5250b078c204085df.mockapi.io/`)
 
 ## 🚀 Features
 
@@ -10,15 +53,6 @@ A polished React Native mobile app built with Expo for discovering amazing brand
 - **Follow System**: Local follow/unfollow functionality for brands
 - **Responsive Design**: Optimized for various phone screen sizes
 - **Accessibility**: Full accessibility support with proper labels and roles
-
-## 🛠 Tech Stack
-
-- **Framework**: Expo SDK 49
-- **Navigation**: React Navigation 6 (Stack Navigator)
-- **Styling**: React Native with Expo Linear Gradient
-- **API**: Axios for HTTP requests
-- **Fonts**: Inter font family
-- **Icons**: Expo Vector Icons
 
 ## 📱 Backend & API
 
@@ -118,25 +152,6 @@ brandpeek/
 eas build -p ios --profile preview
 ```
 
-## 🎨 Design System
-
-### Color Palette
-- **Home Gradient**: Deep navy (#0B0F19) to electric blue (#001F4D)
-- **Detail Gradient**: Dark blue (#001F4D) to purple (#4B0082)
-- **Primary Gradient**: Purple (#7C3AED) to cyan (#06B6D4)
-- **Card Background**: Translucent dark (#121826) with 80% opacity
-
-### Typography
-- **Font Family**: Inter (Regular, Medium, SemiBold, Bold)
-- **Heading**: 32-36px, Bold
-- **Body**: 16-18px, Regular/Medium
-- **Cards**: 18px titles, 14px descriptions
-
-### Components
-- **Buttons**: 56px height, 12px border radius, gradient backgrounds
-- **Cards**: 16px border radius, subtle shadows, translucent backgrounds
-- **Spacing**: 16px margins, 12px padding for cards
-
 ## 🔌 MockAPI Setup Instructions
 
 1. Visit [mockapi.io](https://mockapi.io) and create an account
@@ -167,27 +182,10 @@ https://[your-project-id].mockapi.io/api/v1/brands
 - `npm run web` - Start web version
 - `npm run build:apk` - Build Android APK with EAS
 
-## 📋 Assignment Submission Checklist
-
-- ✅ Complete React Native Expo project structure
-- ✅ Two screens: Home (brand list) and Brand Detail
-- ✅ Modern UI with gradients and dark theme
-- ✅ MockAPI integration with error handling
-- ✅ React Navigation stack setup
-- ✅ Responsive design for mobile devices
-- ✅ Accessibility labels and roles
-- ✅ Loading states and error handling
-- ✅ Follow/unfollow functionality (local state)
-- ✅ README with setup instructions
-- ✅ Mock data and API instructions
-
 ## 🎯 Demo & Screenshots
 
 **Expo Snack Demo**: [View in Expo Snack](https://snack.expo.dev) *(Upload this project)*
 
-**GitHub Repository**: `https://github.com/yourusername/brandpeek`
-
 ---
-
 **Backend Used**: MockAPI for REST endpoints  
 **Project Structure**: Modular React Native with Expo, featuring component-based architecture with /screens, /components, /services separation for maintainable code.

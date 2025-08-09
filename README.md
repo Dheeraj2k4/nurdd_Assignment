@@ -11,7 +11,7 @@ BrandPeek is a mobile application that allows users to browse and discover popul
 1. **Prerequisites**: Node.js (v16+), Expo CLI
 2. **Clone the repository**:
    ```bash
-   git clone <your-repo-url>
+   git clone <url>
    cd brandpeek
    ```
 3. **Install dependencies**:

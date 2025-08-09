@@ -184,7 +184,7 @@ https://[your-project-id].mockapi.io/api/v1/brands
 
 ## 🎯 Demo & Screenshots
 
-**Expo Snack Demo**: [View in Expo Snack](https://snack.expo.dev) *(Upload this project)*
+**Expo APK Demo**: (https://expo.dev/accounts/dheerxj/projects/brandpeek/builds/3e690d90-3411-413a-81fc-a22d51956c90)
 
 ---
 **Backend Used**: MockAPI for REST endpoints  
